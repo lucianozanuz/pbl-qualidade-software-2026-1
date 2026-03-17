@@ -79,37 +79,13 @@ Preencha a tabela abaixo:
 
 ---
 
-# 3. Responsabilidades de Qualidade
-
-Liste atividades importantes para garantir a qualidade do software e quem deve realizá-las.
-
----
-
-## 3.1 Atividades de qualidade
-
-- 
-- 
-- 
-
----
-
-## 3.2 Distribuição de responsabilidades
-
-| Atividade | Responsável |
-|----------|------------|
-| | |
-| | |
-| | |
-
----
-
-# 4. Práticas de QA Sugeridas
+# 3. Práticas de QA Sugeridas
 
 Sugira práticas que a startup pode adotar para melhorar a qualidade.
 
 ---
 
-## 4.1 Lista de práticas
+## 3.1 Lista de práticas
 
 - 
 - 
@@ -118,7 +94,7 @@ Sugira práticas que a startup pode adotar para melhorar a qualidade.
 
 ---
 
-## 4.2 Explicação das práticas
+## 3.2 Explicação das práticas
 
 Explique brevemente cada prática sugerida.
 
@@ -133,7 +109,7 @@ Explique brevemente cada prática sugerida.
 
 ---
 
-# 5. Anúncios de Contratação
+# 4. Anúncios de Contratação
 
 A startup decidiu contratar novos profissionais. Crie anúncios de vagas.
 
@@ -141,7 +117,7 @@ A startup decidiu contratar novos profissionais. Crie anúncios de vagas.
 
 ---
 
-## 5.1 Vaga 1 – [Título da vaga]
+## 4.1 Vaga 1 – [Título da vaga]
 
 ### Descrição da vaga
 > 
@@ -166,7 +142,7 @@ A startup decidiu contratar novos profissionais. Crie anúncios de vagas.
 
 ---
 
-## 5.2 Vaga 2 – [Título da vaga]
+## 4.2 Vaga 2 – [Título da vaga]
 
 ### Descrição da vaga
 > 
@@ -191,7 +167,7 @@ A startup decidiu contratar novos profissionais. Crie anúncios de vagas.
 
 ---
 
-# 6. Conclusão da Equipe
+# 5. Conclusão da Equipe
 
 Descreva brevemente:
 
