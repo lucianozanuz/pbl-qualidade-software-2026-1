@@ -12,40 +12,52 @@
 
 ## 2. Níveis de Teste
 
-### Login
-- Unitário: validação de senha
-- Integração: comunicação com banco
-- Sistema: fluxo completo de login
-- Aceitação: usuário consegue acessar
+### Funcionalidade: Login
+- Unitário: validar senha e campos obrigatórios
+- Integração: verificar comunicação com banco
+- Sistema: usuário faz login completo
+- Aceitação: usuário entra no sistema sem erro
+
+### Funcionalidade: XXX
+- Unitário: XXX
+- Integração: XXX
+- Sistema: XXX
+- Aceitação: XXX
 
 ---
 
 ## 3. Prioridades e Riscos
 
 Alta prioridade:
-- Busca (principal funcionalidade)
-- Login (acesso ao sistema)
+- Login → sem login o usuário não usa o sistema
+- XXX
 
 Justificativa:
 Falhas nessas áreas impedem o uso da plataforma.
+
+Baixa prioridade: 
+- Favoritos → não impede uso
+
+Justificativa:
+XXX.
 
 ---
 
 ## 4. Pirâmide de Testes
 
-- Maior foco: testes unitários (validação de regras)
-- Médio foco: integração
-- Menor foco: testes de sistema
+- Maior foco: XXX
+- Médio foco: XXX
+- Menor foco: XXX
 
 Justificativa:
-Testes unitários são mais rápidos e baratos.
+XXX.
 
 ---
 
 ## 5. Testes em Produção
 
-- Uso de Canary Release
-- Aplicar em novas funcionalidades
+- Uso de XXX
+- Aplicar em XXX
 
 Justificativa:
-Reduz risco de impacto para todos os usuários.
+XXX.
