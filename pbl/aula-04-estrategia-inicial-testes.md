@@ -2,8 +2,11 @@
 
 ## 1. Funcionalidades
 - Login
-- Busca de restaurantes
-- Avaliações
+- Funcionalidade 2
+- Funcionalidade 3
+- Funcionalidade 4
+- Funcionalidade 5
+- Funcionalidade 6
 
 ---
 
