@@ -94,5 +94,6 @@ Apenas uma abordagem seria suficiente? Por quê?
 
 ## 🚀 Conclusão
 
+```
 <!-- Resuma o que o grupo aprendeu com a atividade -->
-
+```
