@@ -58,11 +58,16 @@
 ```
 
 ### 🔹 Situações a serem testadas
+
 - Situação 1:
 - Situação 2:
 - Situação 3:
 
 ### 🔹 Possíveis erros identificados
+
+-  
+-  
+-  
 
 ## ⚖️ 4. Comparação entre as abordagens
 
