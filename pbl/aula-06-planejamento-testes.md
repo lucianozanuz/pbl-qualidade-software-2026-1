@@ -191,29 +191,13 @@ Responda às questões abaixo:
 
 ---
 
-# 6. (Opcional) Avaliação de Funcionalidades com IA
-
-Caso tenham testado funcionalidades com comportamento não determinístico (ex: recomendações):
-
-## Critérios de avaliação
-
-- Relevância:
-- Coerência:
-- Utilidade:
-
-## Avaliação (exemplo: escala de 1 a 5)
-
-| Caso de Teste | Relevância | Coerência | Utilidade | Observações |
-|---------------|-----------|-----------|-----------|-------------|
-| CT-XX         |           |           |           |             |
-
 ## Conclusão
 
 Descreva se o comportamento da funcionalidade foi considerado aceitável e por quê.
 
 ---
 
-# 7. Conclusão Geral
+# 6. Conclusão Geral
 
 Faça um resumo final:
 
