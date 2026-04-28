@@ -9,15 +9,15 @@
 
 ## 📁 Estrutura do Projeto
 
-.
-├── src/
-│   ├── pedido.py
-│   ├── desconto.py
-│   └── entrega.py
-└── tests/
-    ├── test_pedido.py
-    ├── test_desconto.py
-    └── test_entrega.py
+.  
+├── src/  
+│   ├── pedido.py  
+│   ├── desconto.py  
+│   └── entrega.py  
+└── tests/  
+    ├── test_pedido.py  
+    ├── test_desconto.py  
+    └── test_entrega.py  
 
 ---
 
