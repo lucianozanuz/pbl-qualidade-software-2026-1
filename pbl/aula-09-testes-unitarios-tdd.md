@@ -1,124 +1,193 @@
 # Aula 9 – Testes Unitários e TDD
 
 ## 👥 Integrantes
-- Nome 1
-- Nome 2
-- Nome 3
+- Integrante 1
+- Integrante 2
+- Integrante 3
 
 ---
 
 ## 📁 Estrutura do Projeto
 
 .
-├── src/  
-│   └── pedido.py  
-└── tests/  
-      └── test_pedido.py
+├── src/
+│   ├── pedido.py
+│   ├── desconto.py
+│   └── entrega.py
+└── tests/
+    ├── test_pedido.py
+    ├── test_desconto.py
+    └── test_entrega.py
 
 ---
 
-## 🔹 1. Funcionalidade escolhida
+## 🔹 1. Funcionalidades escolhidas
 
-### Funcionalidade
-Cálculo do total do pedido com validação de valor mínimo
+Cada integrante ficou responsável por uma regra de negócio do sistema.
 
-### Descrição
-A funcionalidade soma os valores dos itens de um pedido e valida se o total atinge o valor mínimo exigido pelo restaurante.
+---
 
-### Problema que resolve
-Evita que pedidos com valor abaixo do mínimo sejam processados, garantindo consistência nas regras de negócio.
+### 👤 Integrante 1 – Cálculo do total do pedido com valor mínimo
 
-### Importância
-Essa é uma regra central do sistema, pois impacta diretamente o fluxo de compra.
+**Arquivo da implementação:** `/src/pedido.py`  
+**Arquivo de testes:** `/tests/test_pedido.py`
 
-### Regras de negócio
-- O total é a soma dos preços dos itens  
-- O pedido deve atingir o valor mínimo  
-- Caso não atinja, deve gerar erro  
+#### Descrição
+Soma os valores dos itens do pedido e valida se o total atinge o valor mínimo.
+
+#### Regras de negócio
+- Soma dos itens define o total  
+- Pedido deve atingir valor mínimo  
+- Caso contrário, deve gerar erro  
+
+---
+
+### 👤 Integrante 2 – Aplicação de desconto percentual
+
+**Arquivo da implementação:** `/src/desconto.py`  
+**Arquivo de testes:** `/tests/test_desconto.py`
+
+#### Descrição
+Aplica um desconto percentual sobre o valor total do pedido.
+
+#### Regras de negócio
+- Percentual deve estar entre 0 e 100  
+- Valor final não pode ser negativo  
+
+---
+
+### 👤 Integrante 3 – Cálculo de taxa de entrega
+
+**Arquivo da implementação:** `/src/entrega.py`  
+**Arquivo de testes:** `/tests/test_entrega.py`
+
+#### Descrição
+Calcula a taxa de entrega com base na distância.
+
+#### Regras de negócio
+- Até 3km → taxa fixa  
+- Acima de 3km → taxa adicional por km  
+- Distância negativa → erro  
 
 ---
 
 ## 🔹 2. Testes Unitários
 
-Os testes estão implementados em:
-
-👉 `/tests/test_pedido.py`  
-A funcionalidade está em:  
-👉 `/src/pedido.py`
+Cada integrante implementou seus testes unitários no respectivo arquivo dentro da pasta `/tests`.
 
 ---
 
-### 🧪 Teste 1 – Cálculo com valor acima do mínimo
+### 🧪 Integrante 1 – Testes (pedido)
 
-#### 🎯 Cenário
-Pedido com total maior que o valor mínimo
+#### Teste 1 – Valor acima do mínimo
 
-#### 🔴 Red
-- O teste foi escrito antes da implementação  
-- Falhou devido à função inexistente  
+- Cenário: Pedido válido  
+- Resultado esperado: Retorna total  
 
-#### 🟢 Green
-- Implementado retorno fixo para fazer o teste passar  
+##### TDD
+- Red: teste falhou por função inexistente  
+- Green: implementação mínima  
+- Refactor: cálculo real + validação  
 
-#### 🔵 Refactor
-- Implementado cálculo real com `sum()`  
-- Adicionada validação de valor mínimo  
+##### Refatoração
+- Código evoluiu de fixo para dinâmico  
+- Inclusão de regra de negócio  
 
-#### 🔧 Refatoração
-- Código passou de fixo para dinâmico  
-- Melhor legibilidade e reutilização  
-
-#### ▶️ Execução
+##### Execução
 - Resultado: Passou  
 
 ---
 
-### 🧪 Teste 2 – Pedido abaixo do valor mínimo
+#### Teste 2 – Valor abaixo do mínimo
 
-#### 🎯 Cenário
-Pedido com total menor que o valor mínimo
+- Cenário: Pedido inválido  
+- Resultado esperado: Erro  
 
-#### 🔴 Red
-- Teste criado esperando erro  
-- Falhou inicialmente  
+##### TDD
+- Red: teste esperando erro  
+- Green: exceção implementada  
+- Refactor: melhoria da validação  
 
-#### 🟢 Green
-- Adicionada verificação de valor mínimo  
-- Lançamento de exceção implementado  
-
-#### 🔵 Refactor
-- Mensagem de erro padronizada  
-- Código reorganizado  
-
-#### 🔧 Refatoração
-- Melhoria na clareza da regra de negócio  
+##### Refatoração
 - Tratamento explícito de erro  
 
-#### ▶️ Execução
+##### Execução
 - Resultado: Passou  
 
 ---
 
-### 🧪 Teste 3 – Valor exatamente igual ao mínimo
+### 🧪 Integrante 2 – Testes (desconto)
 
-#### 🎯 Cenário
-Pedido com total igual ao valor mínimo
+#### Teste 1 – Aplicação de desconto válido
 
-#### 🔴 Red
-- Teste criado para validar caso de borda  
-- Inicialmente falhou  
+- Cenário: Desconto dentro do limite  
+- Resultado esperado: Valor reduzido corretamente  
 
-#### 🟢 Green
-- Ajuste na condição (`<` ao invés de `<=`)  
+##### TDD
+- Red: falha inicial  
+- Green: cálculo simples  
+- Refactor: validação de percentual  
 
-#### 🔵 Refactor
-- Código ajustado para tratar corretamente borda  
+##### Refatoração
+- Garantia de limites do desconto  
 
-#### 🔧 Refatoração
-- Correção de regra de negócio  
-- Garantia de comportamento esperado  
+##### Execução
+- Resultado: Passou  
 
-#### ▶️ Execução
+---
+
+#### Teste 2 – Percentual inválido
+
+- Cenário: Desconto maior que 100%  
+- Resultado esperado: Erro  
+
+##### TDD
+- Red: falha  
+- Green: validação adicionada  
+- Refactor: melhoria da mensagem de erro  
+
+##### Refatoração
+- Tratamento de entrada inválida  
+
+##### Execução
+- Resultado: Passou  
+
+---
+
+### 🧪 Integrante 3 – Testes (entrega)
+
+#### Teste 1 – Distância até 3km
+
+- Cenário: Taxa fixa  
+- Resultado esperado: Valor fixo  
+
+##### TDD
+- Red: falha inicial  
+- Green: retorno fixo  
+- Refactor: lógica condicional  
+
+##### Refatoração
+- Inclusão de regra de distância  
+
+##### Execução
+- Resultado: Passou  
+
+---
+
+#### Teste 2 – Distância negativa
+
+- Cenário: Entrada inválida  
+- Resultado esperado: Erro  
+
+##### TDD
+- Red: falha  
+- Green: validação implementada  
+- Refactor: melhoria da estrutura  
+
+##### Refatoração
+- Garantia de integridade dos dados  
+
+##### Execução
 - Resultado: Passou  
 
 ---
