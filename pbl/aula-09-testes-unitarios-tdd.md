@@ -10,10 +10,10 @@
 ## 📁 Estrutura do Projeto
 
 .
-├── src/
-│   └── pedido.py
-└── tests/
-    └── test_pedido.py
+├── src/ 
+│   └── pedido.py 
+└── tests/ 
+    └── test_pedido.py 
 
 ---
 
