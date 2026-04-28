@@ -13,7 +13,7 @@
 ├── src/  
 │   └── pedido.py  
 └── tests/  
-    └── test_pedido.py  
+      └── test_pedido.py
 
 ---
 
@@ -40,82 +40,90 @@ Essa é uma regra central do sistema, pois impacta diretamente o fluxo de compra
 
 ## 🔹 2. Testes Unitários
 
-Os testes unitários foram implementados no arquivo:
+Os testes estão implementados em:
 
-👉 `/tests/test_pedido.py`
-
-A implementação da funcionalidade está em:
-
+👉 `/tests/test_pedido.py`  
+A funcionalidade está em:  
 👉 `/src/pedido.py`
 
-Foram criados testes para:
-- Cenário de sucesso (valor acima do mínimo)
-- Cenário de erro (valor abaixo do mínimo)
-- Cenário de borda (valor exatamente igual ao mínimo)
+---
+
+### 🧪 Teste 1 – Cálculo com valor acima do mínimo
+
+#### 🎯 Cenário
+Pedido com total maior que o valor mínimo
+
+#### 🔴 Red
+- O teste foi escrito antes da implementação  
+- Falhou devido à função inexistente  
+
+#### 🟢 Green
+- Implementado retorno fixo para fazer o teste passar  
+
+#### 🔵 Refactor
+- Implementado cálculo real com `sum()`  
+- Adicionada validação de valor mínimo  
+
+#### 🔧 Refatoração
+- Código passou de fixo para dinâmico  
+- Melhor legibilidade e reutilização  
+
+#### ▶️ Execução
+- Resultado: Passou  
 
 ---
 
-## 🔹 3. Aplicação do TDD
+### 🧪 Teste 2 – Pedido abaixo do valor mínimo
 
-### 🔴 Red (Teste falhando)
-- O teste foi criado antes da implementação da função  
-- Ao executar, ocorreu erro (função inexistente)  
-- Isso confirmou que o teste estava válido e falhando corretamente  
+#### 🎯 Cenário
+Pedido com total menor que o valor mínimo
 
----
+#### 🔴 Red
+- Teste criado esperando erro  
+- Falhou inicialmente  
 
-### 🟢 Green (Código mínimo)
-- Foi implementado o código mínimo necessário para passar no teste  
-- A solução inicial foi simplificada e não cobria todos os cenários  
+#### 🟢 Green
+- Adicionada verificação de valor mínimo  
+- Lançamento de exceção implementado  
 
----
+#### 🔵 Refactor
+- Mensagem de erro padronizada  
+- Código reorganizado  
 
-### 🔵 Refactor
-- O código foi refatorado para atender corretamente as regras de negócio  
-- A implementação passou a ser genérica e reutilizável  
-- Os testes garantiram que nenhuma funcionalidade foi quebrada  
+#### 🔧 Refatoração
+- Melhoria na clareza da regra de negócio  
+- Tratamento explícito de erro  
 
----
-
-## 🔹 4. Refatoração
-
-### Melhorias realizadas
-- Substituição de implementação fixa por lógica real  
-- Uso de função de agregação (`sum`)  
-- Inclusão de validação de regra de negócio  
-- Separação adequada entre código e testes  
+#### ▶️ Execução
+- Resultado: Passou  
 
 ---
 
-### Por que foram necessárias
-- O código inicial era apenas provisório  
-- Não representava corretamente o comportamento esperado  
-- Não era reutilizável  
+### 🧪 Teste 3 – Valor exatamente igual ao mínimo
+
+#### 🎯 Cenário
+Pedido com total igual ao valor mínimo
+
+#### 🔴 Red
+- Teste criado para validar caso de borda  
+- Inicialmente falhou  
+
+#### 🟢 Green
+- Ajuste na condição (`<` ao invés de `<=`)  
+
+#### 🔵 Refactor
+- Código ajustado para tratar corretamente borda  
+
+#### 🔧 Refatoração
+- Correção de regra de negócio  
+- Garantia de comportamento esperado  
+
+#### ▶️ Execução
+- Resultado: Passou  
 
 ---
 
-### Papel dos testes
-- Garantiram segurança na evolução do código  
-- Permitiram refatorar sem quebrar funcionalidades  
-- Validaram diferentes cenários  
-
----
-
-## 🔹 5. Execução dos Testes
-
-Execução realizada via terminal com ferramenta de testes (ex: pytest).
-
-Resultados:
-- Total de testes: 3  
-- Testes que passaram: 3  
-- Testes que falharam: 0  
-
-Evidência:
-- Execução realizada com sucesso (ver saída no terminal do projeto)
-
----
-
-## 🔹 6. Reflexão
+## 🔹 3. Reflexão
 
 ### Foi difícil escrever testes antes do código?
 Sim, pois exige mudança de mentalidade.
