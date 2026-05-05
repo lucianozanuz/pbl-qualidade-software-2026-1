@@ -4,31 +4,112 @@
 ---
 
 ## 👥 Integrante(s)
-- Nome do aluno 1
-- Nome do aluno 2 (se houver)
+- Nome do aluno 1  
+- Nome do aluno 2 (se houver)  
 
 ---
 
 ## 🔹 1. Fluxo funcional escolhido
 
-### 📌 Fluxo: Login de usuário
+### 📌 Fluxo:
+Login de usuário
 
 🔎 **Descrição**  
-Permite autenticar um usuário no sistema LocalEats.
+Permite autenticar um usuário no sistema.
 
 🎯 **Importância**  
-Fluxo crítico de acesso ao sistema.
-
-📏 **Cenários considerados**
-- Login com credenciais válidas → sucesso
-- Login com credenciais inválidas → erro
-- Campos vazios → validação
+Fluxo essencial para acesso às funcionalidades.
 
 ---
 
-## 🔹 2. Teste automatizado com Codegen
+## 🔹 2. Teste com Codegen
 
 ### 💻 Comando utilizado
 
 ```bash
 playwright codegen https://local-eats-unisenac.vercel.app/
+```
+
+### 🔗 Link para o código gerado
+
+👉 https://github.com/seu-repositorio/tests/codegen_login.py
+
+### 🧠 Observações
+
+- O Codegen ajudou a iniciar rapidamente o teste  
+- O código gerado é verboso  
+- Foi necessário refatorar  
+
+---
+
+## 🔹 3. Teste automatizado com Pytest
+
+### 🔗 Link para o teste
+
+👉 https://github.com/seu-repositorio/tests/test_login.py
+
+### 📌 O que o teste faz?
+
+- Acessa o sistema  
+- Realiza login  
+- Valida mensagem de sucesso  
+
+---
+
+## 🔹 4. Refatoração com Page Object Model (POM)
+
+### 🔗 Link para Page Object
+
+👉 https://github.com/seu-repositorio/pages/login_page.py
+
+### 🔗 Link para teste refatorado
+
+👉 https://github.com/seu-repositorio/tests/test_login.py
+
+### 🧠 Melhorias realizadas
+
+- Separação entre teste e lógica de UI  
+- Código mais organizado  
+- Maior reutilização  
+
+---
+
+## 🔹 5. Execução dos testes
+
+### ▶️ Comando
+
+```bash
+pytest
+```
+
+### 📊 Resultado
+
+- Total de testes: 1  
+- Testes passaram: 1  
+- Testes falharam: 0  
+
+### 📸 Evidência
+
+(Inserir print ou link)
+
+---
+
+## 🔹 6. Análise crítica
+
+- O teste quebrou ao alterar textos da interface  
+- Seletores por texto são frágeis  
+- Teste precisa de melhorias para ser mais robusto  
+
+---
+
+## 🔹 7. Reflexão
+
+- Testes automatizados não substituem testes manuais  
+- Devem focar em fluxos críticos  
+- Aumentam a confiança no sistema  
+
+---
+
+## 💡 Conclusão
+
+A automação de testes melhora a qualidade, mas exige boas práticas para manutenção.
