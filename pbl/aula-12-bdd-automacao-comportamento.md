@@ -1,118 +1,35 @@
-# 🧩 Atividade PBL – Aula 12  
-# BDD e Automação Orientada a Comportamento – LocalEats
+# Aula 12 – BDD e Automação Orientada a Comportamento
+# Exemplo de Entrega PBL – LocalEats
 
-## 📌 Contexto
+## 👥 Integrantes
 
-Após evoluir a qualidade do sistema LocalEats com:
-
-- Planejamento de testes
-- Testes manuais
-- Testes unitários com TDD
-- Testes funcionais automatizados
-
-A equipe de Qualidade agora precisa avançar para um novo nível:
-
-👉 Transformar requisitos e comportamentos do sistema em cenários executáveis utilizando BDD (Behavior-Driven Development).
-
-Até agora:
-
-- Os testes estavam muito focados na implementação
-- Os fluxos eram descritos apenas tecnicamente
-- Existia dificuldade em alinhar negócio, desenvolvimento e qualidade
-
-Agora, o desafio é:
-
-👉 Descrever o comportamento esperado do sistema de forma legível e automatizável.
-
-O sistema ainda apresenta problemas como:
-
-- Ambiguidade nos requisitos
-- Dificuldade em validar comportamento esperado
-- Falta de documentação viva
-- Testes difíceis de entender por pessoas não técnicas
-- Fragilidade em automações após mudanças na interface
-
-A equipe precisa garantir que:
-
-> “Os comportamentos esperados do sistema estejam claramente documentados e automaticamente validados.”
-
-Para isso, será adotado:
-
-- BDD (Behavior-Driven Development)
-- Escrita de cenários em Gherkin
-- Automação orientada a comportamento
-- Integração entre pytest-bdd e Playwright
-
-👉 Link para o sistema LocalEats:
-
-https://local-eats-unisenac.vercel.app/
+- Integrante 1
+- Integrante 2
+- Integrante 3
 
 ---
 
-# 🎯 Objetivo da Atividade
+# 🔹 1. Fluxo escolhido
 
-Aplicar, de forma prática e orientada ao uso real:
+## Integrante: Nome do(a) aluno(a)
 
-- Escrita de cenários BDD
-- Linguagem Gherkin
-- Estrutura Given-When-Then
-- Automação orientada a comportamento
-- Uso de pytest-bdd
-- Integração com Playwright
-- Separação entre comportamento e implementação
-- Organização e manutenção de testes automatizados
+### Fluxo
+Histórico de pedidos
 
-⚠️ Importante
-
-O foco desta atividade NÃO é apenas automatizar cliques.
-
-👉 O principal objetivo é:
-
-Transformar regras e comportamentos do sistema em cenários compreensíveis por pessoas técnicas e não técnicas.
-
-Utilizar obrigatoriamente:
-
-- Python
-- pytest
-- pytest-bdd
-- Playwright
-- VSCode
+### Objetivo
+Validar se os pedidos realizados pelo usuário são exibidos corretamente.
 
 ---
 
-# 📝 Tarefas
+# 🔹 2. Cenários BDD
 
-## 🔹 1. Fluxo escolhido
+## Arquivo
 
-Selecionar um fluxo do sistema por integrante do grupo.
-
-👉 Cada integrante deverá trabalhar com um comportamento diferente.
-
-### Fluxos sugeridos
-
-- Busca de restaurantes
-- Navegação entre páginas
-- Histórico de pedidos
-- Visualização de restaurantes
-- Filtro por categoria
-
----
-
-## 🔹 2. Escrita dos cenários BDD
-
-Criar cenários utilizando Gherkin.
-
-### Estrutura obrigatória
-
-```gherkin
-Feature:
-Scenario:
-Given
-When
-Then
+```text
+features/historico_pedidos.feature
 ```
 
-### Exemplo
+## Conteúdo
 
 ```gherkin
 Feature: Histórico de pedidos
@@ -121,23 +38,42 @@ Feature: Histórico de pedidos
     Given que o usuário acessa a página de pedidos
     When visualizar o histórico de transações
     Then o sistema deve exibir os pedidos cadastrados
+
+  Scenario: Validar valor total do pedido
+    Given que o usuário acessa a página de pedidos
+    When visualizar um pedido realizado
+    Then o sistema deve exibir o valor total do pedido
 ```
 
 ---
 
-## 🔹 3. Implementação da automação com pytest-bdd
+# 🔹 3. Automação com pytest-bdd
 
-### Estrutura mínima
+## Estrutura do projeto
 
 ```text
-features/
-  historico_pedidos.feature
-
-tests/
-  test_historico_pedidos.py
+projeto/
+│
+├── features/
+│   └── historico_pedidos.feature
+│
+├── tests/
+│   └── test_historico_pedidos.py
+│
+├── evidencias/
+│
+└── README.md
 ```
 
-### Exemplo simplificado
+---
+
+## Arquivo
+
+```text
+tests/test_historico_pedidos.py
+```
+
+## Código
 
 ```python
 from pytest_bdd import scenarios, given, when, then
@@ -151,125 +87,141 @@ def acessar_pagina(page):
 
 
 @when('visualizar o histórico de transações')
-def visualizar(page):
+def visualizar_historico(page):
     page.locator('text=Histórico de Transações').is_visible()
 
 
+@when('visualizar um pedido realizado')
+def visualizar_pedido(page):
+    page.locator('text=Pedido #1').is_visible()
+
+
 @then('o sistema deve exibir os pedidos cadastrados')
-def validar(page):
+def validar_pedidos(page):
     assert page.locator('text=Pedido #1').is_visible()
+
+
+@then('o sistema deve exibir o valor total do pedido')
+def validar_total(page):
+    assert page.locator('text=R$ 105.98').is_visible()
 ```
 
 ---
 
-## 🔹 4. Organização do projeto
+# 🔹 4. Execução dos testes
 
-```text
-projeto/
-│
-├── features/
-├── tests/
-├── evidencias/
-└── README.md
-```
-
----
-
-## 🔹 5. Execução dos testes
+## Comando executado
 
 ```bash
-pytest
+pytest -v
 ```
 
-Registrar:
-
-- total de cenários
-- cenários aprovados
-- cenários falhos
-- prints ou logs
-
 ---
 
-## 🔹 6. Análise crítica
-
-Responder:
-
-- O cenário ficou legível?
-- O BDD ajudou a entender o comportamento?
-- O teste ficou robusto?
-- Quais dificuldades surgiram?
-- O teste ficou dependente da interface?
-
----
-
-## 🔹 7. Reflexão final
-
-Responder:
-
-- BDD melhora comunicação entre equipe?
-- Todo teste deve usar BDD?
-- Quando vale a pena usar BDD?
-- Como isso ajuda no projeto do grupo?
-
----
-
-# 📦 Entregável
-
-Formato:
-
-- arquivo Markdown (.md)
-
-Nome:
+## Resultado
 
 ```text
-/aula-12-bdd-automacao-comportamento.md
+=================== test session starts ===================
+
+2 passed in 5.32s
+
+==========================================================
 ```
 
-Entrega:
+---
 
-- repositório GitHub do grupo
+# 🔹 5. Evidências
+
+## Print da execução
+
+```text
+evidencias/
+  execucao-testes.png
+```
+
+## Print da aplicação
+
+```text
+evidencias/
+  historico-pedidos.png
+```
 
 ---
 
-# 📊 Avaliação (Rubrica – Unisenac-RS)
+# 🔹 6. Análise crítica
 
-## 🔴 D — Não atingiu
+## O cenário ficou legível?
 
-- Cenários incompletos
-- Estrutura incorreta
-- Automação não executa
-
-## 🟡 C — Parcial
-
-- Cenários pouco claros
-- Automação parcial
-
-## 🔵 B — Pleno
-
-- Cenários corretos
-- Automação funcional
-- Boa separação Given-When-Then
-
-## 🟢 A — Excelência
-
-- Cenários claros
-- Boa representação de regras de negócio
-- Código organizado
-- Automação robusta
-- Excelente análise crítica
+Sim. A estrutura Given-When-Then ajudou a entender claramente o comportamento esperado.
 
 ---
 
-# 💡 Dica final
+## O BDD ajudou a entender o comportamento?
 
-Para obter conceito A:
+Sim. O cenário ficou compreensível mesmo para pessoas sem conhecimento técnico.
 
-- Escrevam cenários pensando no negócio
-- Evitem detalhes excessivamente técnicos
-- Criem automações legíveis
-- Organizem corretamente o projeto
-- Pensem na manutenção futura
+---
 
-👉 Mentalidade esperada:
+## O teste ficou robusto?
 
-> “Uma pessoa não técnica conseguiria entender o comportamento descrito?”
+Parcialmente. Alguns seletores dependem diretamente do texto exibido na tela.
+
+---
+
+## Quais dificuldades surgiram?
+
+- Identificar seletores estáveis
+- Estruturar corretamente os steps
+- Entender integração entre pytest-bdd e Playwright
+
+---
+
+## O teste ficou dependente da interface?
+
+Sim. Mudanças no frontend podem quebrar alguns seletores.
+
+---
+
+# 🔹 7. Reflexão final
+
+## BDD melhora comunicação entre equipe?
+
+Sim. O comportamento do sistema ficou mais claro para QA, desenvolvimento e negócio.
+
+---
+
+## Todo teste deve usar BDD?
+
+Não. BDD deve ser usado principalmente em fluxos importantes do negócio.
+
+---
+
+## Quando vale a pena usar BDD?
+
+Quando o comportamento do sistema precisa ser documentado de forma clara e colaborativa.
+
+---
+
+## Como isso ajuda no projeto do grupo?
+
+Ajuda a transformar requisitos em testes automatizados compreensíveis e organizados.
+
+---
+
+# 📦 Repositório GitHub
+
+```text
+https://github.com/grupo-exemplo/local-eats-bdd
+```
+
+---
+
+# ✅ Conclusão
+
+A atividade permitiu compreender:
+
+- escrita de cenários BDD
+- automação orientada a comportamento
+- integração entre pytest-bdd e Playwright
+- importância da legibilidade dos testes
+- manutenção de automações de frontend
