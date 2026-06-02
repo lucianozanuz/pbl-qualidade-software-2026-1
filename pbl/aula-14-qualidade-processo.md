@@ -1,5 +1,11 @@
 # Aula 14 - Qualidade de Processo
 
+## 👥 Integrantes
+
+- Integrante 1
+- Integrante 2
+- Integrante 3
+
 ## 1. Mapeamento do Processo
 
 ### Fluxo Atual da Equipe
