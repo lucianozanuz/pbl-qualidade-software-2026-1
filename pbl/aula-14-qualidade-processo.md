@@ -20,7 +20,7 @@ Recebimento da Demanda
      Correções
           ↓
        Entrega
-``
+```
 
 ## 2. Entradas, Atividades e Saídas
 
