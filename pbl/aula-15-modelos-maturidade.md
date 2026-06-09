@@ -14,7 +14,7 @@
 | Critério | Sim | Parcial | Não |
 |-----------|-----|----------|-----|
 | Os requisitos são documentados? | | X | |
-| Existe controle de mudanças? | | X | |
+| Existe controle de mudanças? | | | X |
 | Há atividades de teste definidas? | | | |
 | Os defeitos são registrados? | | | |
 | O processo de desenvolvimento é conhecido por toda a equipe? | | | |
