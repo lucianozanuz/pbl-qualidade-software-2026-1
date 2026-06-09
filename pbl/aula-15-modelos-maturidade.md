@@ -13,21 +13,20 @@
 
 | Critério | Sim | Parcial | Não |
 |-----------|-----|----------|-----|
-| Os requisitos são documentados? | X | | |
+| Os requisitos são documentados? | | X | |
 | Existe controle de mudanças? | | X | |
-| Há atividades de teste definidas? | X | | |
-| Os defeitos são registrados? | | X | |
-| Existe alguma forma de melhoria contínua? | | X | |
-| O processo de desenvolvimento é conhecido por toda a equipe? | X | | |
-| As tarefas são planejadas e acompanhadas regularmente? | X | | |
-| Existe padronização para implementação de funcionalidades? | | X | |
-| Os testes são executados antes da entrega das funcionalidades? | X | | |
-| Há revisão de código ou validação por outro integrante da equipe? | | X | |
-| A equipe utiliza ferramentas para gerenciamento das atividades? | X | | |
-| Os artefatos do projeto são organizados e versionados? | X | | |
-| Existe rastreabilidade entre requisitos e funcionalidades? | | X | |
-| A equipe realiza retrospectivas ou reuniões de melhoria? | | X | |
-| Existem métricas para acompanhar a qualidade? | | | X | |
+| Há atividades de teste definidas? | | | |
+| Os defeitos são registrados? | | | |
+| O processo de desenvolvimento é conhecido por toda a equipe? | | | |
+| As tarefas são planejadas e acompanhadas regularmente? | | | |
+| Existe padronização para implementação de funcionalidades? | | | |
+| Os testes são executados antes da entrega das funcionalidades? | | | |
+| Há revisão de código ou validação por outro integrante da equipe? | | | |
+| A equipe utiliza ferramentas para gerenciamento das atividades? | | | |
+| Os artefatos do projeto são organizados e versionados? | | | |
+| Existe rastreabilidade entre requisitos e funcionalidades? | | | |
+| A equipe realiza retrospectivas ou reuniões de melhoria? | | | |
+| Existem métricas para acompanhar a qualidade? | | | | |
 
 ### Nível de maturidade estimado
 
