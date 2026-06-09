@@ -30,11 +30,11 @@
 
 ### Nível de maturidade estimado
 
-**Gerenciado**
+**Nível do CMMI ou MPS.BR...**
 
 ### Justificativa
 
-A equipe possui planejamento das atividades, utiliza versionamento e executa testes. Entretanto, ainda existem oportunidades de melhoria relacionadas à rastreabilidade, métricas, revisões de código e acompanhamento formal de defeitos.
+A equipe possui ..., utiliza ... e executa ... Entretanto, ainda existem oportunidades de melhoria relacionadas à ...
 
 ---
 
