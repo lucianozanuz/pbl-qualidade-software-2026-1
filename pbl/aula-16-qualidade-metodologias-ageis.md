@@ -2,8 +2,10 @@
 
 ## Integrantes
 
-- João Silva
-- Maria Souza
+- Nome 1
+- Nome 2
+- Nome 3
+- Nome 4
 
 ---
 
