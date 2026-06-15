@@ -13,7 +13,14 @@
 
 | Prática | Existe no processo? | Como é aplicada atualmente? | Pode ser melhorada? |
 |----------|----------|----------|----------|
-| Planejamento iterativo | Sim | Planejamento realizado por entregas parciais | Sim |
+| Planejamento iterativo |  |  |  |
+| Priorização de funcionalidades |  |  |  |
+| Entregas incrementais |  |  |  |
+| Feedback frequente |  |  |  |
+| Trabalho colaborativo |  |  |  |
+| Controle visual das atividades |  |  |  |
+| Melhoria contínua |  |  |  |
+
 | Priorização de funcionalidades | Sim | Funcionalidades organizadas por importância | Sim |
 | Entregas incrementais | Parcial | Nem todas as entregas são realizadas em pequenas partes | Sim |
 | Feedback frequente | Sim | Feedback recebido durante as entregas parciais | Sim |
