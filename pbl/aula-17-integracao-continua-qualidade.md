@@ -1,5 +1,14 @@
 # Aula 17 – Integração Contínua, Qualidade Automatizada, Métricas e Gestão de Defeitos
 
+## Integrantes
+
+- Nome 1
+- Nome 2
+- Nome 3
+- Nome 4
+
+---
+
 ## 1. Repositório da Atividade
 
 | Item | Descrição |
